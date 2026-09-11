@@ -26,3 +26,5 @@ The marketing page does not only show decorative mockups. It demonstrates a plau
 ## Recreation note
 
 Build a small issue-triage board whose marketing page shows a real-looking state transition. Preserve the density and hierarchy, but use original data, copy, and visual treatment.
+
+The runnable example in `recreations/linear-exception-queue/` is an original practice build based on observed workflow patterns. It is not a copy of Linear branding, assets, data, or proprietary UI.
