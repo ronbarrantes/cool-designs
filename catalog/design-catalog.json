@@ -100,10 +100,12 @@
       "states": "first lesson, correct, incorrect, streak at risk, goal met, hearts depleted, upgrade prompt.",
       "pattern": "progress, emotion, and a tiny repeatable action reinforce retention.",
       "recreation": "a five-minute lesson loop with recovery after failure and a restrained upgrade moment.",
-      "quality": "reconnaissance",
-      "capture_paths": [],
+      "quality": "captured",
+      "capture_paths": [
+        "captures/batch-02/duolingo-home.png"
+      ],
       "tags": [],
-      "last_verified": "2026-09-10"
+      "last_verified": "2026-09-11"
     },
     {
       "id": "flow-07",
@@ -116,10 +118,12 @@
       "states": "no matches, inquiry, booking request, accepted, upcoming, active care, incident, completed.",
       "pattern": "matching is supported by identity, availability, messaging, and evidence of care.",
       "recreation": "a service-provider booking flow that makes inquiry-to-confirmation transitions explicit.",
-      "quality": "reconnaissance",
-      "capture_paths": [],
+      "quality": "captured",
+      "capture_paths": [
+        "captures/batch-02/rover-home.png"
+      ],
       "tags": [],
-      "last_verified": "2026-09-10"
+      "last_verified": "2026-09-11"
     },
     {
       "id": "flow-08",
@@ -132,10 +136,12 @@
       "states": "unfulfilled, partially fulfilled, in transit, delivered, held, returned, refunded.",
       "pattern": "operational tables become useful when every row exposes the next action and exception.",
       "recreation": "a fulfillment board that highlights orders at risk rather than showing only volume.",
-      "quality": "reconnaissance",
-      "capture_paths": [],
+      "quality": "captured",
+      "capture_paths": [
+        "captures/batch-02/shopify-home.png"
+      ],
       "tags": [],
-      "last_verified": "2026-09-10"
+      "last_verified": "2026-09-11"
     },
     {
       "id": "flow-09",
