@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Design Library Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Read-only catalog</p>
+        <h1>Design Library Dashboard</h1>
+      </div>
+      <p id="catalogMeta" class="meta">Loading catalog...</p>
+    </header>
+
+    <main class="layout">
+      <section class="library" aria-labelledby="libraryTitle">
+        <div class="toolbar" role="search">
+          <label class="search-field">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Name, workflow, pattern, states">
+          </label>
+
+          <label class="select-field">
+            <span>Quality</span>
+            <select id="qualityFilter">
+              <option value="all">All quality levels</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="section-heading">
+          <h2 id="libraryTitle">References</h2>
+          <span id="resultCount" class="count"></span>
+        </div>
+
+        <div id="cards" class="cards" aria-live="polite"></div>
+      </section>
+
+      <aside class="detail-panel" aria-labelledby="detailTitle">
+        <div id="detailEmpty" class="empty-state">
+          <h2 id="detailTitle">Select a reference</h2>
+          <p>Choose a card to inspect its workflow, states, source links, and available capture.</p>
+        </div>
+        <article id="detailContent" class="detail" hidden></article>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
