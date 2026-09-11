@@ -24,6 +24,7 @@ For each company, inspect five layers:
 - Design hypothesis: speed comes from keyboard-first actions, dense hierarchy, predictable shortcuts, and minimal context switching.
 - States to capture: inbox, backlog, blocked, in progress, review, completed, canceled, duplicate.
 - Recreation exercise: build a tiny issue queue with command palette, keyboard shortcuts, cycles, and a clear blocked state.
+- Practice build note: `recreations/linear-exception-queue/` is an original HTML/CSS/JS exercise using invented data and visual treatment. It is not a copy of Linear branding, assets, data, or proprietary UI.
 
 ### 2. Notion
 
@@ -80,6 +81,7 @@ For each company, inspect five layers:
 - Design hypothesis: technical and financial complexity is made manageable through strong defaults, event timelines, and precise failure explanations.
 - States to capture: setup incomplete, payment pending, succeeded, failed, refunded, disputed, payout delayed.
 - Recreation exercise: make a payment event timeline that gives an operator a clear next action for every failure.
+- Practice build note: `recreations/stripe-payment-ops/` is an original HTML/CSS/JS exercise using invented data and visual treatment. It is not a copy of Stripe branding, assets, data, or proprietary UI.
 
 ### 10. ServiceTitan
 

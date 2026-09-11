@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Payment Operations Practice Build</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="ops-shell">
+      <header class="masthead">
+        <div>
+          <p class="eyebrow">Payment operations</p>
+          <h1>Transaction control room</h1>
+        </div>
+        <button id="retryButton" class="primary-action" type="button">Retry recovery</button>
+      </header>
+
+      <section class="metric-grid" aria-label="Daily payment metrics">
+        <article class="metric">
+          <span>Net volume</span>
+          <strong>$284,910</strong>
+          <small>+8.4% from yesterday</small>
+        </article>
+        <article class="metric success">
+          <span>Succeeded</span>
+          <strong>1,842</strong>
+          <small>99.1% authorization rate</small>
+        </article>
+        <article class="metric failed">
+          <span>Failed</span>
+          <strong>17</strong>
+          <small>6 need operator action</small>
+        </article>
+        <article class="metric disputed">
+          <span>Disputed</span>
+          <strong>4</strong>
+          <small>2 evidence packets due today</small>
+        </article>
+      </section>
+
+      <section class="filters" aria-label="Event filters">
+        <label>
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Customer, event, payment id" autocomplete="off">
+        </label>
+        <label>
+          <span>State</span>
+          <select id="stateFilter">
+            <option value="all">All states</option>
+            <option value="succeeded">Succeeded</option>
+            <option value="failed">Failed</option>
+            <option value="disputed">Disputed</option>
+            <option value="recovering">Recovering</option>
+          </select>
+        </label>
+        <label>
+          <span>Method</span>
+          <select id="methodFilter">
+            <option value="all">All methods</option>
+            <option value="card">Card</option>
+            <option value="bank">Bank debit</option>
+            <option value="wallet">Wallet</option>
+          </select>
+        </label>
+      </section>
+
+      <div class="ops-grid">
+        <section class="event-list" aria-labelledby="eventsTitle">
+          <div class="section-head">
+            <div>
+              <h2 id="eventsTitle">Events</h2>
+              <p id="resultSummary">Loading payment events</p>
+            </div>
+            <span class="event-freshness">Live sample</span>
+          </div>
+          <div id="loadingState" class="message-state">Loading latest events...</div>
+          <div id="emptyState" class="message-state hidden">No events match these filters.</div>
+          <ul id="events" class="events"></ul>
+        </section>
+
+        <aside class="timeline-panel" aria-labelledby="timelineTitle">
+          <p class="eyebrow">Selected event</p>
+          <h2 id="timelineTitle">Choose an event</h2>
+          <div id="eventDetail" class="event-detail">
+            <p class="muted">Select a payment to inspect state, timeline, and recovery options.</p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

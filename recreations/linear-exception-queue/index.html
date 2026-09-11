@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exception Queue Practice Build</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Workspace navigation">
+        <div class="workspace-mark" aria-hidden="true">EQ</div>
+        <div>
+          <p class="eyebrow">Workspace</p>
+          <h1>Exception Queue</h1>
+        </div>
+        <nav>
+          <a href="#" class="active">Triage</a>
+          <a href="#">Cycles</a>
+          <a href="#">Reviews</a>
+          <a href="#">Releases</a>
+        </nav>
+        <div class="sidebar-note">
+          <span>Active cycle</span>
+          <strong>September stabilization</strong>
+          <small>18 issues reviewed today</small>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Internal operations</p>
+            <h2>Product exception triage</h2>
+          </div>
+          <button class="primary-action" id="completeButton" type="button">Mark selected complete</button>
+        </header>
+
+        <section class="controls" aria-label="Queue filters">
+          <label class="search-field">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Issue, owner, label, customer" autocomplete="off">
+          </label>
+          <label>
+            <span>Status</span>
+            <select id="statusFilter">
+              <option value="all">All statuses</option>
+              <option value="blocked">Blocked</option>
+              <option value="ready">Ready</option>
+              <option value="in-progress">In progress</option>
+              <option value="complete">Completed</option>
+            </select>
+          </label>
+          <label>
+            <span>Priority</span>
+            <select id="priorityFilter">
+              <option value="all">All priorities</option>
+              <option value="urgent">Urgent</option>
+              <option value="high">High</option>
+              <option value="normal">Normal</option>
+              <option value="low">Low</option>
+            </select>
+          </label>
+          <button class="ghost-action" id="loadButton" type="button">Refresh queue</button>
+        </section>
+
+        <section class="state-strip" aria-label="Queue state shortcuts">
+          <button class="state-card" type="button" data-state="all">
+            <span>All open</span>
+            <strong id="countAll">0</strong>
+          </button>
+          <button class="state-card blocked" type="button" data-state="blocked">
+            <span>Blocked</span>
+            <strong id="countBlocked">0</strong>
+          </button>
+          <button class="state-card complete" type="button" data-state="complete">
+            <span>Completed</span>
+            <strong id="countComplete">0</strong>
+          </button>
+          <button class="state-card muted" type="button" data-state="empty-demo">
+            <span>Empty demo</span>
+            <strong>0</strong>
+          </button>
+        </section>
+
+        <div class="content-grid">
+          <section class="queue-panel" aria-labelledby="queueTitle">
+            <div class="panel-header">
+              <div>
+                <h3 id="queueTitle">Queue</h3>
+                <p id="resultSummary">Loading issues</p>
+              </div>
+              <span class="queue-freshness">Updated 1m ago</span>
+            </div>
+            <div id="loadingState" class="message-state">Loading current exceptions...</div>
+            <div id="emptyState" class="message-state hidden">No matching issues. Try clearing a filter.</div>
+            <div class="table-wrap" id="tableWrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Issue</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Owner</th>
+                    <th scope="col">SLA</th>
+                  </tr>
+                </thead>
+                <tbody id="issueRows"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <aside class="detail-panel" aria-labelledby="detailTitle">
+            <p class="eyebrow">Selected issue</p>
+            <h3 id="detailTitle">Choose an issue</h3>
+            <div id="detailBody" class="detail-body">
+              <p class="empty-copy">Select a row to inspect context, handoff history, and the next operational action.</p>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
