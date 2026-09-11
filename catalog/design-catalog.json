@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "generated_from": [
+    "flows/2026-09-10-flow-records-batch-01.md",
+    "captures/batch-01-notes.md"
+  ],
+  "records": [
+    {
+      "id": "flow-01",
+      "name": "Linear issue lifecycle",
+      "source_urls": [
+        "https://linear.app/docs/configuring-workflows"
+      ],
+      "workflow": "create issue \u2192 triage \u2192 prioritize \u2192 assign \u2192 cycle \u2192 review \u2192 complete.",
+      "states": "inbox, backlog, started, blocked, canceled, duplicate, completed.",
+      "pattern": "dense information architecture with fast state changes and low context switching.",
+      "recreation": "a keyboard-friendly exception queue with status, owner, priority, and cycle.",
+      "quality": "captured",
+      "capture_paths": [
+        "captures/linear/home.png"
+      ],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-02",
+      "name": "Stripe payment and recovery",
+      "source_urls": [
+        "https://stripe.com/resources/more/payment-processing-explained",
+        "https://docs.stripe.com/workflows"
+      ],
+      "workflow": "configure account \u2192 create payment \u2192 authenticate \u2192 succeed or fail \u2192 settle, refund, or dispute.",
+      "states": "incomplete setup, pending, succeeded, failed, refunded, disputed, payout delayed.",
+      "pattern": "event timelines and explicit next actions make invisible financial processes legible.",
+      "recreation": "an operator payment timeline with failure explanations and recovery actions.",
+      "quality": "captured",
+      "capture_paths": [
+        "captures/stripe/home.png"
+      ],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-03",
+      "name": "Airbnb reservation",
+      "source_urls": [
+        "https://www.airbnb.com/help/article/85"
+      ],
+      "workflow": "search \u2192 filter \u2192 inspect listing \u2192 validate dates and rules \u2192 price review \u2192 reserve \u2192 prepare for stay.",
+      "states": "unavailable dates, request pending, payment failure, cancellation, active trip, support case.",
+      "pattern": "desire-building media is paired with repeated trust, policy, and price signals.",
+      "recreation": "a stay-booking flow with transparent fees and a clear failed-payment recovery path.",
+      "quality": "captured",
+      "capture_paths": [
+        "captures/airbnb/home.png"
+      ],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-04",
+      "name": "Uber ride request",
+      "source_urls": [
+        "https://www.uber.com/us/en/about/how-does-uber-work/"
+      ],
+      "workflow": "destination \u2192 estimate \u2192 request \u2192 matching \u2192 driver arrival \u2192 trip \u2192 payment \u2192 rating or help.",
+      "states": "locating, searching, matched, arriving, in trip, completed, canceled, safety issue.",
+      "pattern": "state-aware screens keep only the current decision and status prominent.",
+      "recreation": "a service-request state machine where the primary action changes at every stage.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-05",
+      "name": "Instacart substitution",
+      "source_urls": [
+        "https://www.instacart.com/help/section/360007902831/360039162252",
+        "https://docs.instacart.com/storefront/learn_about_your_storefront/cart_and_checkout/replacements/"
+      ],
+      "workflow": "build basket \u2192 choose replacement rules \u2192 shopper picks \u2192 customer approves change \u2192 fulfill, refund, or substitute.",
+      "states": "unavailable item, suggestion, approval pending, approved, partial fulfillment, refund, late delivery.",
+      "pattern": "uncertainty is converted into small, understandable approval decisions.",
+      "recreation": "a substitution card with price delta, preference, approve, and refund options.",
+      "quality": "captured",
+      "capture_paths": [
+        "captures/instacart/home.png"
+      ],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-06",
+      "name": "Duolingo daily learning loop",
+      "source_urls": [
+        "https://www.duolingo.com/help/what-is-a-streak"
+      ],
+      "workflow": "choose goal \u2192 lesson \u2192 immediate feedback \u2192 progress reward \u2192 streak reminder \u2192 return.",
+      "states": "first lesson, correct, incorrect, streak at risk, goal met, hearts depleted, upgrade prompt.",
+      "pattern": "progress, emotion, and a tiny repeatable action reinforce retention.",
+      "recreation": "a five-minute lesson loop with recovery after failure and a restrained upgrade moment.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-07",
+      "name": "Rover care booking",
+      "source_urls": [
+        "https://www.rover.com/",
+        "https://www.rover.com/become-a-sitter/"
+      ],
+      "workflow": "describe need \u2192 search providers \u2192 compare profile and trust signals \u2192 inquire \u2192 book \u2192 receive updates \u2192 review.",
+      "states": "no matches, inquiry, booking request, accepted, upcoming, active care, incident, completed.",
+      "pattern": "matching is supported by identity, availability, messaging, and evidence of care.",
+      "recreation": "a service-provider booking flow that makes inquiry-to-confirmation transitions explicit.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-08",
+      "name": "Shopify order fulfillment",
+      "source_urls": [
+        "https://help.shopify.com/en/manual/fulfillment/fulfilling-orders",
+        "https://help.shopify.com/en/manual/fulfillment"
+      ],
+      "workflow": "order received \u2192 allocate inventory \u2192 fulfill \u2192 label and ship \u2192 track \u2192 deliver, return, or refund.",
+      "states": "unfulfilled, partially fulfilled, in transit, delivered, held, returned, refunded.",
+      "pattern": "operational tables become useful when every row exposes the next action and exception.",
+      "recreation": "a fulfillment board that highlights orders at risk rather than showing only volume.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-09",
+      "name": "Mobbin flow library",
+      "source_urls": [
+        "https://mobbin.com/",
+        "https://mobbin.com/explore/web/flows"
+      ],
+      "workflow": "choose platform or category \u2192 search or browse \u2192 open flow \u2192 inspect screens \u2192 save or compare reference.",
+      "states": "discovery, filters, empty search, flow detail, screen zoom, saved item, gated content.",
+      "pattern": "the unit of value is a connected flow, not an isolated attractive screen.",
+      "recreation": "a local reference browser that links screens into a stateful journey with annotations.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-10",
+      "name": "Awwwards interactive discovery",
+      "source_urls": [
+        "https://www.awwwards.com/websites/web-interactive/",
+        "https://www.awwwards.com/websites/interaction-design/"
+      ],
+      "workflow": "browse gallery \u2192 filter or open project \u2192 experience motion and interaction \u2192 inspect studio or case details.",
+      "states": "gallery, hover, loading, transition, project detail, external visit, reduced-motion behavior.",
+      "pattern": "visual spectacle can be organized into a navigable discovery system.",
+      "recreation": "a small gallery with strong transitions but clear navigation and accessible fallback.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-11",
+      "name": "Intercom conversation routing",
+      "source_urls": [
+        "https://www.intercom.com/help/en/articles/7836459-workflows-explained",
+        "https://www.intercom.com/help/en/articles/4134615-customer-opens-a-new-conversation-in-the-messenger"
+      ],
+      "workflow": "open conversation \u2192 collect context \u2192 automate or assign \u2192 respond \u2192 snooze or escalate \u2192 resolve or reopen.",
+      "states": "bot greeting, waiting, assigned, snoozed, escalated, resolved, reopened.",
+      "pattern": "automation and human intervention share one visible conversation context.",
+      "recreation": "support inbox with customer context, suggested response, assignment, snooze, and reopen.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-12",
+      "name": "Airtable form to automation",
+      "source_urls": [
+        "https://support.airtable.com/articles/9431794285-building-and-sharing-forms-in-airtable",
+        "https://support.airtable.com/articles/4764749250-airtable-automation-trigger-when-a-form-is-submitted"
+      ],
+      "workflow": "publish form \u2192 collect submission \u2192 validate \u2192 create record \u2192 trigger automation \u2192 assign or notify.",
+      "states": "blank form, validation error, submitted, duplicate, automation running, failed, assigned.",
+      "pattern": "a simple front door can feed a structured operator workflow without exposing the database.",
+      "recreation": "public intake form that creates an internal exception record with ownership and audit history.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-13",
+      "name": "Retool internal operations",
+      "source_urls": [
+        "https://retool.com/resources/what-can-you-build-with-retool"
+      ],
+      "workflow": "authenticate \u2192 filter records \u2192 open detail \u2192 inspect related data \u2192 act \u2192 confirm result.",
+      "states": "loading, stale data, permission denied, destructive confirmation, mutation success, mutation failure.",
+      "pattern": "high-complexity internal tools can remain approachable when detail and action are colocated.",
+      "recreation": "exception console with filterable queue, detail drawer, approval action, and audit log.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-14",
+      "name": "Figma collaborative handoff",
+      "source_urls": [
+        "https://www.figma.com/design-process/",
+        "https://www.figma.com/design/"
+      ],
+      "workflow": "create canvas \u2192 explore \u2192 comment \u2192 revise \u2192 approve \u2192 hand off \u2192 reuse component.",
+      "states": "draft, editing, comment unresolved, comment resolved, review, branch, published library.",
+      "pattern": "collaboration is embedded at the object being discussed instead of separated into another tool.",
+      "recreation": "design-review board with object-level comments, status, and handoff checklist.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-15",
+      "name": "ServiceTitan field closeout",
+      "source_urls": [
+        "https://help.servicetitan.com/v1/docs/servicetitan-max-cross-feature-workflow-reference-guide",
+        "https://help.servicetitan.com/construction/docs/complete-the-work-in-the-field"
+      ],
+      "workflow": "request \u2192 estimate \u2192 schedule \u2192 dispatch \u2192 technician work \u2192 evidence \u2192 approval \u2192 invoice \u2192 follow-up.",
+      "states": "unscheduled, assigned, en route, on site, needs approval, parts pending, completed, ready to bill, exception.",
+      "pattern": "the important design problem is the handoff between office certainty and field reality.",
+      "recreation": "read-only completed-job audit that flags missing time, notes, photos, approvals, or billing status.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-16",
+      "name": "Buildertrend construction project",
+      "source_urls": [
+        "https://buildertrend.com/product-workflow/",
+        "https://buildertrend.com/"
+      ],
+      "workflow": "lead \u2192 estimate \u2192 contract \u2192 selections \u2192 schedule \u2192 budget \u2192 change order \u2192 build \u2192 punch list \u2192 warranty.",
+      "states": "draft, awaiting selection, approval pending, scheduled, delayed, change requested, punch item open, complete.",
+      "pattern": "client trust depends on surfacing project progress without hiding uncertainty or changes.",
+      "recreation": "change-order and project-closeout view with version history, approval, and unresolved items.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-17",
+      "name": "OpenTable reservation",
+      "source_urls": [
+        "https://opentable.com/",
+        "https://play.google.com/store/apps/details?hl=en_CA&id=com.opentable"
+      ],
+      "workflow": "location and date \u2192 browse \u2192 filter \u2192 inspect restaurant \u2192 choose time \u2192 confirm \u2192 reminder \u2192 visit or cancel.",
+      "states": "no availability, waitlist, reservation held, confirmed, reminder, late arrival, cancellation.",
+      "pattern": "availability is the central interface, while trust and detail support the commitment.",
+      "recreation": "reservation picker that handles scarcity, waitlist, confirmation, and cancellation gracefully.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-18",
+      "name": "Wise international transfer",
+      "source_urls": [
+        "https://wise.com/us/send-money/",
+        "https://wise.com/help/articles/2977959/how-do-i-send-money-with-wise"
+      ],
+      "workflow": "choose currencies \u2192 enter amount \u2192 see fee and recipient amount \u2192 verify recipient \u2192 pay \u2192 track delivery.",
+      "states": "quote, verification pending, payment pending, transfer in progress, delivered, failed, refunded.",
+      "pattern": "transparency is a conversion feature when price, timing, and status are visible before commitment.",
+      "recreation": "transfer quote and status tracker with fee breakdown and clear failure recovery.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-19",
+      "name": "Vercel deployment",
+      "source_urls": [
+        "https://vercel.com/docs/deployments/overview",
+        "https://vercel.com/docs/getting-started-with-vercel/projects-deployments"
+      ],
+      "workflow": "connect project \u2192 deploy \u2192 build \u2192 inspect logs \u2192 preview \u2192 promote or roll back.",
+      "states": "queued, building, preview ready, failed, canceled, promoted, rolled back.",
+      "pattern": "technical progress is communicated as a timeline with logs and a clear next action.",
+      "recreation": "deployment timeline with build stages, failure context, preview link, and rollback action.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    },
+    {
+      "id": "flow-20",
+      "name": "Sentry issue triage",
+      "source_urls": [
+        "https://sentry.io/",
+        "https://docs.sentry.io/integrations/issue-tracking/"
+      ],
+      "workflow": "error arrives \u2192 group issue \u2192 inspect context \u2192 assign \u2192 link ticket \u2192 resolve \u2192 verify regression.",
+      "states": "new, recurring, ignored, assigned, linked, resolved, regressed.",
+      "pattern": "raw events become useful when grouped, contextualized, and connected to ownership.",
+      "recreation": "error triage table with frequency, impact, owner, linked work, and regression signal.",
+      "quality": "reconnaissance",
+      "capture_paths": [],
+      "tags": [],
+      "last_verified": "2026-09-10"
+    }
+  ]
+}
