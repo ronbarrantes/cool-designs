@@ -2,7 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
 
 import { Badge, Card, EmptyState, MetaList, TagList } from '../components/ui'
-import { content } from '../lib/content'
+import { content, formatTag, researchStatus, splitJourney } from '../lib/content'
 
 export const Route = createFileRoute('/')({
   component: LibraryPage,
@@ -21,6 +21,7 @@ function LibraryPage() {
         flow.workflow,
         flow.states,
         flow.pattern,
+        flow.recreation,
         flow.quality,
         flow.tags.join(' '),
       ]
@@ -35,34 +36,43 @@ function LibraryPage() {
     <div className="page">
       <section className="page-heading">
         <div>
-          <p className="eyebrow">Research library</p>
-          <h1>Browse workflow examples.</h1>
+          <p className="eyebrow">Product design field guide</p>
+          <h1>Find a better way to design a tricky product journey.</h1>
+          <p className="page-intro">
+            Pick a product with a problem like yours. See the full journey, the things that can
+            go wrong, and the design idea worth borrowing.
+          </p>
         </div>
         <MetaList
           items={[
-            `${content.flows.length} flows`,
-            `${content.notes.length} notes`,
-            `${content.recreations.length} recreations`,
+            `${content.flows.length} product examples`,
+            `${content.flows.filter((flow) => flow.capture_paths.length).length} with screenshots`,
           ]}
         />
       </section>
 
-      <section className="toolbar" aria-label="Browse controls">
+      <section className="how-to-use" aria-label="How to use this library">
+        <span>1. Find a similar problem</span>
+        <span>2. Follow the journey</span>
+        <span>3. Borrow the useful idea</span>
+      </section>
+
+      <section className="toolbar" aria-label="Find a product example">
         <label>
-          <span>Search</span>
+          <span>What are you designing?</span>
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="payment, handoff, booking"
+            placeholder="Try payment, booking, support, or delivery"
           />
         </label>
         <label>
-          <span>Tag</span>
+          <span>Choose a topic</span>
           <select value={tag} onChange={(event) => setTag(event.target.value)}>
-            <option value="all">All tags</option>
+            <option value="all">All topics</option>
             {content.tags.map((item) => (
               <option key={item} value={item}>
-                {item}
+                {formatTag(item)}
               </option>
             ))}
           </select>
@@ -70,32 +80,35 @@ function LibraryPage() {
       </section>
 
       {flows.length ? (
-        <section className="card-grid" aria-label="Flows">
+        <section className="card-grid" aria-label="Product examples">
           {flows.map((flow) => (
             <Card key={flow.id}>
               <div className="card-topline">
-                <Badge>{flow.quality}</Badge>
-                <span>{flow.id}</span>
+                <Badge>{researchStatus(flow.quality)}</Badge>
+                <span>{splitJourney(flow.workflow).length} steps</span>
               </div>
               <h2>
                 <Link to="/flows/$flowId" params={{ flowId: flow.id }}>
                   {flow.name}
                 </Link>
               </h2>
+              <p className="card-kicker">Why study it</p>
               <p>{flow.pattern}</p>
               <MetaList
                 items={[
-                  `${flow.capture_paths.length} captures`,
-                  `${flow.recreation_ids.length} recreations`,
+                  `${flow.capture_paths.length} screenshots`,
                   `${flow.source_urls.length} sources`,
                 ]}
               />
-              <TagList tags={flow.tags.slice(0, 4)} />
+              <TagList tags={flow.tags.slice(0, 4)} format={formatTag} />
+              <Link className="card-link" to="/flows/$flowId" params={{ flowId: flow.id }}>
+                Study this example →
+              </Link>
             </Card>
           ))}
         </section>
       ) : (
-        <EmptyState>No matching flows.</EmptyState>
+        <EmptyState>No examples match that search yet.</EmptyState>
       )}
     </div>
   )

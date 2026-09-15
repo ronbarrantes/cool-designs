@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from '@tanstack/react-router'
 
 import { BackLink, Card, MetaList, TagList } from '../../components/ui'
-import { content, getFlow, getNote } from '../../lib/content'
+import { content, formatTag, getFlow, getNote } from '../../lib/content'
 
 export const Route = createFileRoute('/notes/$noteId')({
   loader: ({ params }) => {
@@ -21,14 +21,14 @@ function NoteDetailPage() {
       <BackLink />
       <section className="detail-heading">
         <div>
-          <p className="eyebrow">Markdown</p>
+          <p className="eyebrow">Research note</p>
           <h1>{note.title}</h1>
         </div>
       </section>
 
       <Card>
-        <MetaList items={[note.path, `${flows.length} linked flows`]} />
-        <TagList tags={note.tags} />
+        <MetaList items={[`${flows.length} linked product examples`]} />
+        <TagList tags={note.tags} format={formatTag} />
         {flows.length ? (
           <div className="inline-links">
             {flows.map((flow) => (
@@ -46,7 +46,7 @@ function NoteDetailPage() {
       />
 
       <section className="section-block">
-        <h2>More notes</h2>
+        <h2>More research notes</h2>
         <div className="note-list">
           {content.notes
             .filter((item) => item.id !== note.id)

@@ -13,13 +13,19 @@ export function Badge({ children }: PropsWithChildren) {
   return <span className="badge">{children}</span>
 }
 
-export function TagList({ tags }: { tags: readonly string[] }) {
+export function TagList({
+  tags,
+  format = (tag) => tag,
+}: {
+  tags: readonly string[]
+  format?: (tag: string) => string
+}) {
   if (!tags.length) return null
 
   return (
     <div className="tag-list">
       {tags.map((tag) => (
-        <Badge key={tag}>{tag}</Badge>
+        <Badge key={tag}>{format(tag)}</Badge>
       ))}
     </div>
   )
@@ -39,10 +45,10 @@ export function MetaList({ items }: { items: readonly ReactNode[] }) {
   )
 }
 
-export function BackLink({ to = '/' }: { to?: string }) {
+export function BackLink({ to = '/', children = 'All examples' }: PropsWithChildren<{ to?: string }>) {
   return (
     <Link className="back-link" to={to}>
-      Back
+      ← {children}
     </Link>
   )
 }

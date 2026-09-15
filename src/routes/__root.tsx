@@ -16,7 +16,7 @@ export const Route = createRootRoute({
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         name: 'description',
-        content: 'A compact research browser for captured product flows.',
+        content: 'A practical library of product journeys, screenshots, and design lessons.',
       },
       { title: 'Cool Designs' },
     ],
@@ -49,9 +49,9 @@ function AppShell({ children }: { children: ReactNode }) {
           Cool Designs
         </Link>
         <nav className="site-nav" aria-label="Main navigation">
-          <Link to="/">Library</Link>
-          <Link to="/captures">Captures</Link>
-          <Link to="/recreations">Recreations</Link>
+          <Link to="/">Examples</Link>
+          <Link to="/captures">Screenshots</Link>
+          <Link to="/recreations">Practice builds</Link>
         </nav>
       </header>
       <main>{children}</main>

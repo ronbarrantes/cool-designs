@@ -14,8 +14,12 @@ function CapturesPage() {
     <div className="page">
       <section className="page-heading">
         <div>
-          <p className="eyebrow">Screenshots</p>
-          <h1>Captured source material.</h1>
+          <p className="eyebrow">Real product screens</p>
+          <h1>See how these products solve the problem.</h1>
+          <p className="page-intro">
+            Each screenshot connects to a full breakdown of the journey and the design lesson
+            behind it.
+          </p>
         </div>
       </section>
 
@@ -24,7 +28,7 @@ function CapturesPage() {
           flow.capture_paths.map((capturePath) => (
             <Link key={capturePath} to="/flows/$flowId" params={{ flowId: flow.id }}>
               <img src={`/assets/${capturePath}`} alt="" loading="lazy" />
-              <span>{capturePath}</span>
+              <span>Open the {flow.name} breakdown</span>
               <Badge>{flow.name}</Badge>
             </Link>
           )),

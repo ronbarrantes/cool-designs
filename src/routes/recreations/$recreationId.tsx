@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from '@tanstack/react-router'
 
 import { BackLink, Card, MetaList, TagList } from '../../components/ui'
-import { getFlowByRecreation, getRecreation } from '../../lib/content'
+import { formatTag, getFlowByRecreation, getRecreation } from '../../lib/content'
 
 export const Route = createFileRoute('/recreations/$recreationId')({
   loader: ({ params }) => {
@@ -18,10 +18,10 @@ function RecreationDetailPage() {
 
   return (
     <div className="page detail-page">
-      <BackLink to="/recreations" />
+      <BackLink to="/recreations">All practice builds</BackLink>
       <section className="detail-heading">
         <div>
-          <p className="eyebrow">Recreation</p>
+          <p className="eyebrow">Practice build</p>
           <h1>{recreation.title}</h1>
         </div>
       </section>
@@ -29,17 +29,16 @@ function RecreationDetailPage() {
       <Card>
         <MetaList
           items={[
-            recreation.path,
             flow ? (
               <Link key={flow.id} to="/flows/$flowId" params={{ flowId: flow.id }}>
                 {flow.name}
               </Link>
             ) : (
-              'Unlinked'
+              'No linked research example'
             ),
           ]}
         />
-        <TagList tags={recreation.tags} />
+        <TagList tags={recreation.tags} format={formatTag} />
       </Card>
 
       <iframe

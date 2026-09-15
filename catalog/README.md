@@ -1,6 +1,6 @@
 # Design catalog
 
-This directory is the dashboard-facing index for the research library. It turns existing flow records and captures into selectable design references without replacing the raw research.
+This directory is the structured index for the product design field guide. It turns research notes and screenshots into examples people can search, understand, and use.
 
 ## Current files
 
@@ -11,11 +11,19 @@ This directory is the dashboard-facing index for the research library. It turns 
 
 Each catalog record should have a stable `id`, display `name`, `source_urls`, `workflow`, `states`, `pattern`, `recreation`, `quality`, `capture_paths`, `tags`, and `last_verified`.
 
-## Dashboard direction
+The field names are kept short for the data file. The site explains them in plain language:
 
-The eventual dashboard should let Ron browse visual cards, filter by category and interaction pattern, open source-backed detail views, save a shortlist, compare selected references, and link a reference to a recreation or project brief.
+- `workflow` becomes the ordered journey from start to finish.
+- `states` becomes the situations a design must handle along the way.
+- `pattern` becomes the main idea worth learning from the example.
+- `recreation` becomes a small project that could test that idea.
+- `quality` tells the site whether a real screenshot is available.
 
-The first dashboard should be read-only. Do not build authentication, comments, ratings, or a CMS until the catalog is useful locally.
+## Product direction
+
+The field guide should help Ron start with a product problem, find a similar example, understand the full journey, notice the situations the design handles, and leave with an idea he can use. Screenshots, research notes, and practice builds support that lesson.
+
+Keep the field guide read-only. Do not build authentication, comments, ratings, or a CMS until the research itself calls for them.
 
 ## Update rule
 
