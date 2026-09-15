@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CapturesRouteImport } from './routes/captures'
+import { Route as ReferencesRouteImport } from './routes/references'
 import { Route as FlowsFlowIdRouteImport } from './routes/flows/$flowId'
 import { Route as NotesNoteIdRouteImport } from './routes/notes/$noteId'
 import { Route as RecreationsIndexRouteImport } from './routes/recreations/index'
@@ -24,6 +25,11 @@ const IndexRoute = IndexRouteImport.update({
 const CapturesRoute = CapturesRouteImport.update({
   id: '/captures',
   path: '/captures',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReferencesRoute = ReferencesRouteImport.update({
+  id: '/references',
+  path: '/references',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FlowsFlowIdRoute = FlowsFlowIdRouteImport.update({
@@ -50,6 +56,7 @@ const RecreationsRecreationIdRoute = RecreationsRecreationIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/captures': typeof CapturesRoute
+  '/references': typeof ReferencesRoute
   '/flows/$flowId': typeof FlowsFlowIdRoute
   '/notes/$noteId': typeof NotesNoteIdRoute
   '/recreations/$recreationId': typeof RecreationsRecreationIdRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/captures': typeof CapturesRoute
+  '/references': typeof ReferencesRoute
   '/flows/$flowId': typeof FlowsFlowIdRoute
   '/notes/$noteId': typeof NotesNoteIdRoute
   '/recreations/$recreationId': typeof RecreationsRecreationIdRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/captures': typeof CapturesRoute
+  '/references': typeof ReferencesRoute
   '/flows/$flowId': typeof FlowsFlowIdRoute
   '/notes/$noteId': typeof NotesNoteIdRoute
   '/recreations/$recreationId': typeof RecreationsRecreationIdRoute
@@ -77,6 +86,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/captures'
+    | '/references'
     | '/flows/$flowId'
     | '/notes/$noteId'
     | '/recreations/$recreationId'
@@ -85,6 +95,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/captures'
+    | '/references'
     | '/flows/$flowId'
     | '/notes/$noteId'
     | '/recreations/$recreationId'
@@ -93,6 +104,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/captures'
+    | '/references'
     | '/flows/$flowId'
     | '/notes/$noteId'
     | '/recreations/$recreationId'
@@ -102,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CapturesRoute: typeof CapturesRoute
+  ReferencesRoute: typeof ReferencesRoute
   FlowsFlowIdRoute: typeof FlowsFlowIdRoute
   NotesNoteIdRoute: typeof NotesNoteIdRoute
   RecreationsRecreationIdRoute: typeof RecreationsRecreationIdRoute
@@ -122,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/captures'
       fullPath: '/captures'
       preLoaderRoute: typeof CapturesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/references': {
+      id: '/references'
+      path: '/references'
+      fullPath: '/references'
+      preLoaderRoute: typeof ReferencesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/flows/$flowId': {
@@ -158,6 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CapturesRoute: CapturesRoute,
+  ReferencesRoute: ReferencesRoute,
   FlowsFlowIdRoute: FlowsFlowIdRoute,
   NotesNoteIdRoute: NotesNoteIdRoute,
   RecreationsRecreationIdRoute: RecreationsRecreationIdRoute,

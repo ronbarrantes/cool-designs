@@ -59,6 +59,7 @@ const recreationFlowMap = new Map([
 
 async function main() {
   const catalog = await readJson('catalog/design-catalog.json')
+  const referenceCatalog = await readJson('catalog/reference-catalog.json')
   const markdownPaths = await collectFiles(markdownRoots, '.md')
   const noteStubs = await Promise.all(markdownPaths.map(readNoteStub))
   const noteByPath = new Map(noteStubs.map((note) => [note.path, note]))
@@ -90,6 +91,11 @@ async function main() {
     }
   })
 
+  const references = referenceCatalog.records.map((record) => ({
+    ...record,
+    flow: flows.find((flow) => flow.id === record.flow_id),
+  }))
+
   await copyAssets()
   await fs.mkdir(path.dirname(generatedPath), { recursive: true })
   await fs.writeFile(
@@ -103,6 +109,7 @@ async function main() {
           assets: assetRoots,
         },
         flows,
+        references,
         notes: renderedNotes,
         recreations,
         tags: unique(flows.flatMap((flow) => flow.tags)).sort(),

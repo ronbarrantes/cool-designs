@@ -3,6 +3,7 @@ import contentIndex from '../generated/content-index.json'
 export type Flow = (typeof contentIndex.flows)[number]
 export type Note = (typeof contentIndex.notes)[number]
 export type Recreation = (typeof contentIndex.recreations)[number]
+export type Reference = (typeof contentIndex.references)[number]
 
 export const content = contentIndex
 
@@ -56,6 +57,10 @@ export function getNote(id: string) {
 
 export function getRecreation(id: string) {
   return content.recreations.find((recreation) => recreation.id === id)
+}
+
+export function getReference(id: string) {
+  return content.references.find((reference) => reference.id === id)
 }
 
 export function getFlowRelations(flow: Flow) {

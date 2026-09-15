@@ -50,6 +50,7 @@ function AppShell({ children }: { children: ReactNode }) {
         </Link>
         <nav className="site-nav" aria-label="Main navigation">
           <Link to="/">Examples</Link>
+          <Link to="/references">Gallery</Link>
           <Link to="/captures">Screenshots</Link>
           <Link to="/recreations">Practice builds</Link>
         </nav>

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "npm run content:build && vite dev",
     "content:build": "node scripts/build-content-index.mjs",
+    "reference:add": "node scripts/add-reference.mjs",
     "typecheck": "npm run content:build && tsc --noEmit",
     "build": "npm run content:build && vite build",
     "check:captures": "node scripts/check-built-captures.mjs",
