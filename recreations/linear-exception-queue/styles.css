@@ -484,6 +484,30 @@ tbody tr.selected {
 }
 
 @media (max-width: 700px) {
+  .sidebar {
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .sidebar nav {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2px;
+  }
+
+  .sidebar a {
+    display: grid;
+    min-height: 44px;
+    place-items: center;
+    padding: 6px 3px;
+    font-size: 12px;
+  }
+
+  .sidebar-note {
+    display: none;
+  }
+
   .workspace {
     padding: 14px;
   }
@@ -496,5 +520,11 @@ tbody tr.selected {
 
   .state-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  button,
+  input,
+  select {
+    min-height: 44px;
   }
 }
