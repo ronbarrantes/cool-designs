@@ -35,6 +35,13 @@ a:hover {
   color: var(--accent);
 }
 
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgb(13 118 110 / 28%);
+  outline-offset: 2px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -107,6 +114,11 @@ select {
   margin-bottom: 1.3rem;
 }
 
+.page-heading > div,
+.detail-heading > div {
+  max-width: 52rem;
+}
+
 .detail-heading {
   align-items: center;
 }
@@ -128,11 +140,37 @@ p {
 }
 
 h1 {
-  max-width: 16ch;
+  max-width: 19ch;
   margin: 0;
   font-size: clamp(2rem, 5vw, 4.7rem);
   line-height: 0.95;
   letter-spacing: 0;
+}
+
+.page-intro,
+.detail-intro {
+  max-width: 46rem;
+  margin: 1rem 0 0;
+  font-size: 1.05rem;
+}
+
+.how-to-use {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 1.8rem 0 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--border);
+}
+
+.how-to-use span {
+  background: var(--surface);
+  padding: 0.85rem 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 650;
 }
 
 h2 {
@@ -196,6 +234,10 @@ p {
   grid-column: span 2;
 }
 
+.span-3 {
+  grid-column: 1 / -1;
+}
+
 .card {
   min-width: 0;
   border: 1px solid var(--border);
@@ -207,6 +249,104 @@ p {
 
 .card p {
   margin: 0.4rem 0 0.8rem;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.card-kicker {
+  margin: 0 0 0.4rem !important;
+  color: var(--accent) !important;
+  font-size: 0.78rem;
+  font-weight: 760;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.lesson-card {
+  margin: 1.5rem 0 0.85rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--accent-soft);
+  padding: 1.25rem 1.4rem;
+}
+
+.lesson-card h2 {
+  max-width: 42rem;
+  margin-bottom: 0.45rem;
+  font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+  line-height: 1.25;
+}
+
+.lesson-card p:last-child {
+  margin: 0;
+}
+
+.journey-list {
+  display: grid;
+  gap: 0;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  counter-reset: journey;
+  list-style: none;
+}
+
+.journey-list li {
+  position: relative;
+  min-height: 2.7rem;
+  padding: 0.35rem 0 0.8rem 2.7rem;
+  color: var(--text);
+  line-height: 1.45;
+  counter-increment: journey;
+}
+
+.journey-list li::before {
+  content: counter(journey);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  width: 1.9rem;
+  height: 1.9rem;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface-muted);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.journey-list li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 1.9rem;
+  bottom: 0;
+  left: 0.93rem;
+  width: 1px;
+  background: var(--border);
+}
+
+.situation-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.situation-list li {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-muted);
+  padding: 0.45rem 0.7rem;
+  color: var(--text);
+  font-size: 0.88rem;
 }
 
 .card-topline,
@@ -255,6 +395,19 @@ p {
 
 .section-block {
   margin-top: 2rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-heading h2,
+.section-heading p {
+  margin-bottom: 0;
 }
 
 .capture-grid {
@@ -384,12 +537,19 @@ p {
   }
 
   .toolbar,
-  .detail-grid {
+  .detail-grid,
+  .how-to-use {
     grid-template-columns: 1fr;
   }
 
-  .span-2 {
+  .span-2,
+  .span-3 {
     grid-column: auto;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   h1 {

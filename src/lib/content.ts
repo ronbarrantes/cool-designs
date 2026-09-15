@@ -6,6 +6,46 @@ export type Recreation = (typeof contentIndex.recreations)[number]
 
 export const content = contentIndex
 
+export function splitJourney(value: string) {
+  return value
+    .replace(/\.$/, '')
+    .split('→')
+    .map((step) => step.trim())
+}
+
+export function splitSituations(value: string) {
+  return value
+    .replace(/\.$/, '')
+    .split(',')
+    .map((item) => item.trim())
+}
+
+export function formatTag(value: string) {
+  const labels: Record<string, string> = {
+    b2b: 'business software',
+    commerce: 'online shopping',
+    consumer: 'consumer apps',
+    deployment: 'software releases',
+    discovery: 'browsing and discovery',
+    fulfillment: 'shipping and delivery',
+    handoff: 'handing work to others',
+    'issue-triage': 'sorting incoming work',
+    'live-state': 'live updates',
+    operations: 'business operations',
+    recovery: 'fixing failures',
+    retention: 'repeat use',
+    routing: 'assigning work',
+    substitution: 'replacements',
+    triage: 'sorting problems',
+  }
+
+  return labels[value] ?? value.replaceAll('-', ' ')
+}
+
+export function researchStatus(quality: string) {
+  return quality === 'captured' ? 'Screenshot available' : 'Research only'
+}
+
 export function getFlow(id: string) {
   return content.flows.find((flow) => flow.id === id)
 }
