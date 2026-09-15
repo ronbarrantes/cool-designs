@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "reference-linear-navigation",
+      "name": "Dense work navigation",
+      "kind": "component",
+      "description": "A compact work surface where navigation, filtering, and the current task stay close together.",
+      "flow_id": "flow-01",
+      "image_path": "captures/linear/home.webp",
+      "tags": ["navigation", "sidebar", "work console", "dense information"]
+    },
+    {
+      "id": "reference-stripe-payment",
+      "name": "Payment operations timeline",
+      "kind": "flow",
+      "description": "A payment journey with visible status, failure recovery, refunds, and disputes.",
+      "flow_id": "flow-02",
+      "image_path": "captures/stripe/home.webp",
+      "tags": ["payments", "timeline", "status", "recovery"]
+    },
+    {
+      "id": "reference-airbnb-booking",
+      "name": "Trust-building booking",
+      "kind": "flow",
+      "description": "A booking experience that brings together imagery, price, rules, reviews, and the final action.",
+      "flow_id": "flow-03",
+      "image_path": "captures/airbnb/home.webp",
+      "tags": ["booking", "commerce", "pricing", "trust"]
+    },
+    {
+      "id": "reference-instacart-replacement",
+      "name": "Replacement decision",
+      "kind": "component",
+      "description": "A focused choice that explains an unavailable item and gives the customer a clear fallback.",
+      "flow_id": "flow-05",
+      "image_path": "captures/instacart/home.webp",
+      "tags": ["commerce", "choice", "recovery", "confirmation"]
+    },
+    {
+      "id": "reference-duolingo-progress",
+      "name": "Progress and motivation",
+      "kind": "component",
+      "description": "A lesson surface that makes progress, feedback, and the next action easy to see.",
+      "flow_id": "flow-06",
+      "image_path": "captures/batch-02/duolingo-home.webp",
+      "tags": ["progress", "feedback", "learning", "retention"]
+    },
+    {
+      "id": "reference-rover-profile",
+      "name": "Service provider profile",
+      "kind": "component",
+      "description": "A trust-focused profile that combines identity, reviews, availability, and a path to booking.",
+      "flow_id": "flow-07",
+      "image_path": "captures/batch-02/rover-home.webp",
+      "tags": ["profiles", "reviews", "booking", "trust"]
+    },
+    {
+      "id": "reference-shopify-order-board",
+      "name": "Order status board",
+      "kind": "component",
+      "description": "An operations view that puts order status and the next action in the same place.",
+      "flow_id": "flow-08",
+      "image_path": "captures/batch-02/shopify-home.webp",
+      "tags": ["tables", "status", "operations", "fulfillment"]
+    }
+  ]
+}

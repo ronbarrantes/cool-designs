@@ -5,6 +5,7 @@ This directory is the structured index for the product design field guide. It tu
 ## Current files
 
 - `design-catalog.json` is a normalized manifest for future dashboard views.
+- `reference-catalog.json` is the visual gallery manifest for components and flows.
 - `README.md` defines the record shape and update rules.
 
 ## Record shape

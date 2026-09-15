@@ -425,6 +425,58 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
 }
 
+.reference-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: -0.15rem 0 1rem;
+}
+
+.reference-tag-row button {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+}
+
+.reference-tag-row button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.reference-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 0.85rem;
+}
+
+.reference-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.reference-image-link {
+  display: block;
+  margin: -1rem -1rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-muted);
+}
+
+.reference-image-link img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  object-position: top;
+}
+
+.reference-card .card-link {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
 .capture-grid a {
   display: grid;
   gap: 0.55rem;
