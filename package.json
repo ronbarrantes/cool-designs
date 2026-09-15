@@ -7,6 +7,7 @@
     "content:build": "node scripts/build-content-index.mjs",
     "typecheck": "npm run content:build && tsc --noEmit",
     "build": "npm run content:build && vite build",
+    "check:captures": "node scripts/check-built-captures.mjs",
     "start": "node .output/server/index.mjs"
   },
   "dependencies": {

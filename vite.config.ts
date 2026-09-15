@@ -11,6 +11,8 @@ export default defineConfig({
       prerender: {
         enabled: true,
         crawlLinks: true,
+        // Assets are copied as files; prerendering would decode binary images as text.
+        filter: ({ path }) => !path.startsWith('/assets/'),
       },
     }),
     nitro(),
