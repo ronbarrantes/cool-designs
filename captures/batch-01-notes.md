@@ -6,7 +6,7 @@ Branch: `research/captures-batch-01`
 ## Stripe
 
 - **Source:** https://stripe.com/
-- **Capture:** `stripe/home.png`
+- **Capture:** `stripe/home.webp`
 - **Observed:** The public page combines a focused “get started” entry point with product-family navigation, business-model recommendations, customer stories, integration paths, and a product recommendation form.
 - **Workflow pattern:** visitor intent → business context → recommended product path → no-code, platform, or custom integration → support and services.
 - **Notable state language:** the form explains the information it needs, provides a character limit, and shows input-strength criteria.
@@ -15,7 +15,7 @@ Branch: `research/captures-batch-01`
 ## Airbnb
 
 - **Source:** https://www.airbnb.com/
-- **Capture:** `airbnb/home.png`
+- **Capture:** `airbnb/home.webp`
 - **Observed:** The primary interaction is a compact search flow with tabs for Homes, Experiences, and Services, followed by location, dates, guests, and search. The page also exposes inspiration categories and hosting/support routes.
 - **Workflow pattern:** choose intent category → enter minimum trip context → search → browse inspiration or results → reserve or host.
 - **Notable state language:** search inputs are named by the question they answer, such as Where, When, and Who.
@@ -24,7 +24,7 @@ Branch: `research/captures-batch-01`
 ## Instacart
 
 - **Source:** https://www.instacart.com/
-- **Capture:** `instacart/home.png`
+- **Capture:** `instacart/home.webp`
 - **Result:** the worker browser received a CloudFront 403 page rather than the application.
 - **Research note:** retain the blocked capture as an access-state example, but do not treat it as an Instacart UI observation. Use the public replacement documentation for the workflow record until another access route is available.
 

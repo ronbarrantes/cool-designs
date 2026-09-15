@@ -3,7 +3,7 @@
 - **Source:** https://linear.app/
 - **Captured:** 2026-09-10
 - **Surface:** public marketing page with embedded product previews
-- **Capture:** `home.png`
+- **Capture:** `home.webp`
 
 ## Observed flow
 

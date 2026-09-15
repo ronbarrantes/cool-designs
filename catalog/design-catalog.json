@@ -17,7 +17,7 @@
       "recreation": "a keyboard-friendly exception queue with status, owner, priority, and cycle.",
       "quality": "captured",
       "capture_paths": [
-        "captures/linear/home.png"
+        "captures/linear/home.webp"
       ],
       "tags": [],
       "last_verified": "2026-09-10"
@@ -35,7 +35,7 @@
       "recreation": "an operator payment timeline with failure explanations and recovery actions.",
       "quality": "captured",
       "capture_paths": [
-        "captures/stripe/home.png"
+        "captures/stripe/home.webp"
       ],
       "tags": [],
       "last_verified": "2026-09-10"
@@ -52,7 +52,7 @@
       "recreation": "a stay-booking flow with transparent fees and a clear failed-payment recovery path.",
       "quality": "captured",
       "capture_paths": [
-        "captures/airbnb/home.png"
+        "captures/airbnb/home.webp"
       ],
       "tags": [],
       "last_verified": "2026-09-10"
@@ -85,7 +85,7 @@
       "recreation": "a substitution card with price delta, preference, approve, and refund options.",
       "quality": "captured",
       "capture_paths": [
-        "captures/instacart/home.png"
+        "captures/instacart/home.webp"
       ],
       "tags": [],
       "last_verified": "2026-09-10"
@@ -102,7 +102,7 @@
       "recreation": "a five-minute lesson loop with recovery after failure and a restrained upgrade moment.",
       "quality": "captured",
       "capture_paths": [
-        "captures/batch-02/duolingo-home.png"
+        "captures/batch-02/duolingo-home.webp"
       ],
       "tags": [],
       "last_verified": "2026-09-11"
@@ -120,7 +120,7 @@
       "recreation": "a service-provider booking flow that makes inquiry-to-confirmation transitions explicit.",
       "quality": "captured",
       "capture_paths": [
-        "captures/batch-02/rover-home.png"
+        "captures/batch-02/rover-home.webp"
       ],
       "tags": [],
       "last_verified": "2026-09-11"
@@ -138,7 +138,7 @@
       "recreation": "a fulfillment board that highlights orders at risk rather than showing only volume.",
       "quality": "captured",
       "capture_paths": [
-        "captures/batch-02/shopify-home.png"
+        "captures/batch-02/shopify-home.webp"
       ],
       "tags": [],
       "last_verified": "2026-09-11"
