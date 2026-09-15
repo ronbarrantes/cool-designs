@@ -82,6 +82,9 @@ select {
 
 .site-nav a,
 .back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   border-radius: 6px;
   padding: 0.45rem 0.7rem;
   color: var(--muted);
@@ -202,14 +205,14 @@ p {
   display: grid;
   gap: 0.35rem;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.875rem;
   font-weight: 650;
 }
 
 .toolbar input,
 .toolbar select {
   width: 100%;
-  min-height: 2.7rem;
+  min-height: 2.75rem;
   border: 1px solid var(--border);
   border-radius: 7px;
   background: var(--surface);
@@ -252,7 +255,9 @@ p {
 }
 
 .card-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   margin-top: 1rem;
   color: var(--accent);
   font-weight: 700;
@@ -412,12 +417,12 @@ p {
 
 .capture-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 0.85rem;
 }
 
 .capture-grid-large {
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
 }
 
 .capture-grid a {
@@ -498,8 +503,16 @@ p {
 }
 
 .markdown-body table {
+  display: block;
   width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
   border-collapse: collapse;
+}
+
+.markdown-body pre {
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .markdown-body th,
@@ -525,15 +538,39 @@ p {
 }
 
 @media (max-width: 720px) {
-  .site-header,
+  .site-header {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .site-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 0.25rem;
+  }
+
+  .site-nav a {
+    display: grid;
+    min-height: 2.75rem;
+    place-items: center;
+    padding: 0.4rem 0.25rem;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+
   .page-heading,
   .detail-heading {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .site-nav {
-    justify-content: flex-start;
+  .page {
+    width: min(100% - 1.5rem, 1180px);
+    padding-top: 1.5rem;
   }
 
   .toolbar,
@@ -554,5 +591,16 @@ p {
 
   h1 {
     max-width: none;
+    font-size: clamp(2rem, 11vw, 2.65rem);
+    line-height: 1;
+  }
+
+  .card,
+  .markdown-body {
+    padding: 0.9rem;
+  }
+
+  .recreation-frame {
+    min-height: 620px;
   }
 }
