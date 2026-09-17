@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
 
+import { ReferenceCard } from '../components/reference-card'
 import { Badge, Card, EmptyState, MetaList, TagList } from '../components/ui'
 import { content, formatTag, researchStatus, splitJourney } from '../lib/content'
 
@@ -47,6 +48,7 @@ function LibraryPage() {
           items={[
             `${content.flows.length} product examples`,
             `${content.flows.filter((flow) => flow.capture_paths.length).length} with screenshots`,
+            `${content.references.length} visual references`,
           ]}
         />
       </section>
@@ -110,6 +112,27 @@ function LibraryPage() {
       ) : (
         <EmptyState>No examples match that search yet.</EmptyState>
       )}
+
+      <section className="section-block" aria-labelledby="visual-reference-gallery">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">Visual references</p>
+            <h2 id="visual-reference-gallery">Visual reference gallery</h2>
+            <p>
+              Study reusable screenshots and patterns separately from the product example journeys.
+            </p>
+          </div>
+          <Link className="card-link" to="/references">
+            See the full gallery →
+          </Link>
+        </div>
+
+        <div className="reference-grid">
+          {content.references.map((reference) => (
+            <ReferenceCard key={reference.id} reference={reference} />
+          ))}
+        </div>
+      </section>
     </div>
   )
 }

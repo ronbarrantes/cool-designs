@@ -1,7 +1,8 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
 
-import { Badge, Card, EmptyState, MetaList, TagList } from '../components/ui'
+import { ReferenceCard } from '../components/reference-card'
+import { EmptyState, MetaList } from '../components/ui'
 import { content } from '../lib/content'
 
 export const Route = createFileRoute('/references')({
@@ -10,14 +11,24 @@ export const Route = createFileRoute('/references')({
 
 function ReferencesPage() {
   const [query, setQuery] = useState('')
-  const [kind, setKind] = useState<'all' | 'component' | 'flow'>('all')
+  const [kind, setKind] = useState('all')
   const normalizedQuery = query.trim().toLowerCase()
+  const kinds = [...new Set(content.references.map((reference) => reference.kind))].sort()
   const tags = [...new Set(content.references.flatMap((reference) => reference.tags))].sort()
+  const screenshotCount = content.references.filter((reference) => reference.image_path).length
+  const sourceCount = content.references.filter((reference) => reference.source_url).length
 
   const references = useMemo(() => {
     return content.references.filter((reference) => {
       const matchesKind = kind === 'all' || reference.kind === kind
-      const haystack = [reference.name, reference.description, reference.tags.join(' ')].join(' ').toLowerCase()
+      const haystack = [
+        reference.name,
+        reference.kind,
+        reference.description,
+        reference.tags.join(' '),
+      ]
+        .join(' ')
+        .toLowerCase()
       return matchesKind && (!normalizedQuery || haystack.includes(normalizedQuery))
     })
   }, [kind, normalizedQuery])
@@ -33,7 +44,13 @@ function ReferencesPage() {
             original flow, the states it handles, and the design choice worth borrowing.
           </p>
         </div>
-        <MetaList items={[`${content.references.length} references`, `${content.flows.length} journeys`]} />
+        <MetaList
+          items={[
+            `${content.references.length} references`,
+            `${screenshotCount} screenshot studies`,
+            `${sourceCount} source references`,
+          ]}
+        />
       </section>
 
       <section className="toolbar" aria-label="Filter visual references">
@@ -43,10 +60,13 @@ function ReferencesPage() {
         </label>
         <label>
           <span>Show</span>
-          <select value={kind} onChange={(event) => setKind(event.target.value as typeof kind)}>
-            <option value="all">Components and flows</option>
-            <option value="component">Components</option>
-            <option value="flow">Flows</option>
+          <select value={kind} onChange={(event) => setKind(event.target.value)}>
+            <option value="all">All references</option>
+            {kinds.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
           </select>
         </label>
       </section>
@@ -58,16 +78,7 @@ function ReferencesPage() {
       {references.length ? (
         <section className="reference-grid" aria-label="Visual references">
           {references.map((reference) => (
-            <Card key={reference.id} className="reference-card">
-              <Link to="/flows/$flowId" params={{ flowId: reference.flow_id }} className="reference-image-link">
-                <img src={`/assets/${reference.image_path}`} alt={reference.name} loading="lazy" />
-              </Link>
-              <div className="card-topline"><Badge>{reference.kind}</Badge><span>{reference.flow?.name}</span></div>
-              <h2>{reference.name}</h2>
-              <p>{reference.description}</p>
-              <TagList tags={reference.tags} />
-              <Link className="card-link" to="/flows/$flowId" params={{ flowId: reference.flow_id }}>Study the full journey →</Link>
-            </Card>
+            <ReferenceCard key={reference.id} reference={reference} />
           ))}
         </section>
       ) : <EmptyState>No references match that search yet.</EmptyState>}

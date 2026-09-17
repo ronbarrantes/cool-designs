@@ -63,6 +63,186 @@
       "flow_id": "flow-08",
       "image_path": "captures/batch-02/shopify-home.webp",
       "tags": ["tables", "status", "operations", "fulfillment"]
+    },
+    {
+      "id": "reference-maggie-appleton",
+      "name": "Maggie Appleton",
+      "kind": "influence",
+      "description": "Study how essays, diagrams, and spatial explanations can make complex ideas easier to explore.",
+      "source_url": "https://maggieappleton.com/",
+      "tags": ["visual explanation", "essays", "diagrams", "learning"],
+      "preview_theme": "ink"
+    },
+    {
+      "id": "reference-robin-rendle",
+      "name": "Robin Rendle",
+      "kind": "influence",
+      "description": "Study compact writing, type, and interface critique as a lens for clearer digital products.",
+      "source_url": "https://robinrendle.com/about/",
+      "tags": ["writing", "typography", "critique", "web design"],
+      "preview_theme": "paper"
+    },
+    {
+      "id": "reference-brad-frost-atomic-design",
+      "name": "Brad Frost / Atomic Design",
+      "kind": "influence",
+      "description": "Study how small interface parts combine into resilient systems and product screens.",
+      "source_url": "https://atomicdesign.bradfrost.com/",
+      "tags": ["design systems", "components", "patterns", "method"],
+      "preview_theme": "system"
+    },
+    {
+      "id": "reference-frank-chimero-shape-of-design",
+      "name": "Frank Chimero / The Shape of Design",
+      "kind": "influence",
+      "description": "Study design decision-making through purpose, form, constraints, and craft.",
+      "source_url": "https://shapeofdesignbook.com/",
+      "tags": ["design thinking", "process", "writing", "craft"],
+      "preview_theme": "coral"
+    },
+    {
+      "id": "reference-pentagram-work",
+      "name": "Pentagram",
+      "kind": "gallery",
+      "description": "Study broad identity, editorial, environmental, and digital work across many client contexts.",
+      "source_url": "https://www.pentagram.com/work",
+      "tags": ["identity", "editorial", "brand systems", "portfolio"],
+      "preview_theme": "mono"
+    },
+    {
+      "id": "reference-studio-dumbar-work",
+      "name": "Studio Dumbar",
+      "kind": "gallery",
+      "description": "Study expressive identity systems with strong motion, typography, and visual rhythm.",
+      "source_url": "https://studiodumbar.com/work",
+      "tags": ["identity", "motion", "typography", "systems"],
+      "preview_theme": "cobalt"
+    },
+    {
+      "id": "reference-dia-studio",
+      "name": "DIA Studio",
+      "kind": "gallery",
+      "description": "Study kinetic identity work where type, motion, and systems carry the experience.",
+      "source_url": "https://www.dia.studio/",
+      "tags": ["motion", "identity", "typography", "brand systems"],
+      "preview_theme": "signal"
+    },
+    {
+      "id": "reference-instrument",
+      "name": "Instrument",
+      "kind": "gallery",
+      "description": "Study polished digital product and brand work across commerce, content, and platform experiences.",
+      "source_url": "https://www.instrument.com/",
+      "tags": ["digital product", "brand", "commerce", "portfolio"],
+      "preview_theme": "ink"
+    },
+    {
+      "id": "reference-work-and-co",
+      "name": "Work & Co",
+      "kind": "gallery",
+      "description": "Study product-focused case studies that connect interface detail with business outcomes.",
+      "source_url": "https://work.co/",
+      "tags": ["digital product", "case studies", "commerce", "platforms"],
+      "preview_theme": "system"
+    },
+    {
+      "id": "reference-area-17",
+      "name": "AREA 17",
+      "kind": "gallery",
+      "description": "Study cultural, editorial, and commerce projects with careful structure and content systems.",
+      "source_url": "https://area17.com/",
+      "tags": ["editorial", "commerce", "content systems", "portfolio"],
+      "preview_theme": "paper"
+    },
+    {
+      "id": "reference-locomotive",
+      "name": "Locomotive",
+      "kind": "gallery",
+      "description": "Study immersive web projects with strong direction, interaction, and production craft.",
+      "source_url": "https://locomotive.ca/en/agency",
+      "tags": ["interactive", "agency", "motion", "web design"],
+      "preview_theme": "cobalt"
+    },
+    {
+      "id": "reference-active-theory-new-frontier",
+      "name": "Active Theory",
+      "kind": "gallery",
+      "description": "Study advanced interaction and real-time web experiences through a focused project lens.",
+      "source_url": "https://activetheory.net/work/new-frontier",
+      "tags": ["interactive", "3d", "real-time", "motion"],
+      "preview_theme": "signal"
+    },
+    {
+      "id": "reference-ueno",
+      "name": "Ueno",
+      "kind": "gallery",
+      "description": "Study digital brand and product case studies with a strong editorial presentation style.",
+      "source_url": "https://www.ueno.co/",
+      "tags": ["brand", "digital product", "case studies", "portfolio"],
+      "preview_theme": "coral"
+    },
+    {
+      "id": "reference-resn",
+      "name": "Resn",
+      "kind": "gallery",
+      "description": "Study playful, immersive digital work that uses interaction as the main material.",
+      "source_url": "https://resn.co.nz/",
+      "tags": ["interactive", "experimental", "motion", "web design"],
+      "preview_theme": "mono"
+    },
+    {
+      "id": "reference-awwwards-portfolio",
+      "name": "Awwwards Portfolio",
+      "kind": "gallery",
+      "description": "Study current portfolio patterns, presentation techniques, and high-polish web execution.",
+      "source_url": "https://www.awwwards.com/websites/portfolio/",
+      "tags": ["portfolio", "web design", "awards", "inspiration"],
+      "preview_theme": "signal"
+    },
+    {
+      "id": "reference-siteinspire",
+      "name": "SiteInspire",
+      "kind": "gallery",
+      "description": "Study curated websites by style, type, and subject to compare composition choices.",
+      "source_url": "https://www.siteinspire.com/",
+      "tags": ["curation", "web design", "portfolio", "layout"],
+      "preview_theme": "paper"
+    },
+    {
+      "id": "reference-typewolf-portfolio-sites",
+      "name": "Typewolf Portfolio Sites",
+      "kind": "gallery",
+      "description": "Study portfolio sites through the lens of typography, type pairing, and page hierarchy.",
+      "source_url": "https://www.typewolf.com/portfolio-sites",
+      "tags": ["typography", "portfolio", "web design", "layout"],
+      "preview_theme": "ink"
+    },
+    {
+      "id": "reference-brutalist-websites",
+      "name": "Brutalist Websites",
+      "kind": "gallery",
+      "description": "Study intentionally raw web interfaces that challenge polish, convention, and layout comfort.",
+      "source_url": "https://brutalistwebsites.com/",
+      "tags": ["brutalism", "experimental", "web design", "layout"],
+      "preview_theme": "mono"
+    },
+    {
+      "id": "reference-designlab-brutalism",
+      "name": "Designlab Brutalism",
+      "kind": "gallery",
+      "description": "Study examples and prompts for using brutalist web ideas with intention.",
+      "source_url": "https://designlab.com/blog/examples-brutalism-in-web-design",
+      "tags": ["brutalism", "examples", "web design", "style"],
+      "preview_theme": "coral"
+    },
+    {
+      "id": "reference-land-book",
+      "name": "Land-book",
+      "kind": "gallery",
+      "description": "Study landing pages, portfolios, and product sites to compare above-the-fold choices.",
+      "source_url": "https://land-book.com/",
+      "tags": ["landing pages", "portfolio", "web design", "inspiration"],
+      "preview_theme": "system"
     }
   ]
 }

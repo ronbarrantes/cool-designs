@@ -472,9 +472,98 @@ p {
   object-position: top;
 }
 
+.reference-preview {
+  --preview-bg: #1d1f20;
+  --preview-fg: #ffffff;
+  --preview-muted: rgb(255 255 255 / 68%);
+  --preview-rule: rgb(255 255 255 / 22%);
+  display: grid;
+  min-height: 12rem;
+  margin: -1rem -1rem 1rem;
+  align-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border);
+  background:
+    linear-gradient(135deg, transparent 0 62%, var(--preview-rule) 62% 63%, transparent 63%),
+    var(--preview-bg);
+  color: var(--preview-fg);
+  padding: 1.05rem;
+  text-decoration: none;
+}
+
+.reference-preview:hover {
+  color: var(--preview-fg);
+}
+
+.reference-preview span,
+.reference-preview small {
+  color: var(--preview-muted);
+  font-size: 0.74rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.reference-preview strong {
+  max-width: 12ch;
+  color: var(--preview-fg);
+  font-size: 2.35rem;
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.reference-preview-ink {
+  --preview-bg: #16201d;
+  --preview-fg: #f7f1df;
+}
+
+.reference-preview-paper {
+  --preview-bg: #f3eadc;
+  --preview-fg: #28221b;
+  --preview-muted: rgb(40 34 27 / 62%);
+  --preview-rule: rgb(40 34 27 / 18%);
+}
+
+.reference-preview-system {
+  --preview-bg: #e4f3ef;
+  --preview-fg: #073d3a;
+  --preview-muted: rgb(7 61 58 / 64%);
+  --preview-rule: rgb(7 61 58 / 18%);
+}
+
+.reference-preview-coral {
+  --preview-bg: #f35f4c;
+  --preview-fg: #1f1716;
+  --preview-muted: rgb(31 23 22 / 68%);
+  --preview-rule: rgb(31 23 22 / 22%);
+}
+
+.reference-preview-mono {
+  --preview-bg: #f7f7f4;
+  --preview-fg: #111111;
+  --preview-muted: rgb(17 17 17 / 58%);
+  --preview-rule: rgb(17 17 17 / 18%);
+}
+
+.reference-preview-cobalt {
+  --preview-bg: #173fb5;
+  --preview-fg: #f9fbff;
+}
+
+.reference-preview-signal {
+  --preview-bg: #d7ef45;
+  --preview-fg: #18200e;
+  --preview-muted: rgb(24 32 14 / 62%);
+  --preview-rule: rgb(24 32 14 / 20%);
+}
+
 .reference-card .card-link {
   margin-top: auto;
   padding-top: 0.5rem;
+}
+
+.external-link {
+  align-self: flex-start;
 }
 
 .capture-grid a {
