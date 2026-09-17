@@ -9,6 +9,8 @@ The repository is organized as a funnel:
 5. `recreations/` holds original practice builds.
 6. `templates/` defines the minimum structure for new records.
 
+Start with `websites/design-influence-library.md` when a run needs broader design references for flows, captures, catalog entries, dashboard comparisons, or original recreation prompts. It is a study guide, not a copying source.
+
 ## Current canonical research line
 
 The consolidated working branch is `research/design-lab`. It contains the history from the initial company inventory, the 100-site discovery map, the first pattern distillation, and the first 20 flow records.
